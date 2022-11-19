@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Coin</string>
+    <string name="title_coins_list">Список валют</string>
+    <string name="title_favorites">Избранное</string>
+    <string name="added_to_favorites">добавлен в избранное</string>
+    <string name="removed_from_favorites">удален из избранного</string>
+    <string name="favorites_empty">Вы ещё не добавили валюты в избранное</string>
+</resources>
