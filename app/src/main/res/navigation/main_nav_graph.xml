@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/splashScreenFragment">
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="suvorov.coin.ui.splash.SplashScreenFragment"
+        android:label="SplashScreenFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashScreenFragment_to_marketFragment"
+            app:destination="@id/marketFragment" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_portfolioFragment"
+            app:destination="@id/portfolioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/marketFragment"
+        android:name="suvorov.coin.ui.market.MarketFragment"
+        android:label="MarketFragment"
+        tools:layout="@layout/fragment_market">
+        <action
+            android:id="@+id/action_marketFragment_to_currencyFragment"
+            app:destination="@id/currencyFragment"/>
+        <action
+            android:id="@+id/action_marketFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+        <action
+            android:id="@+id/action_marketFragment_to_exchangeFragment"
+            app:destination="@id/exchangeFragment" />
+        <action
+            android:id="@+id/action_marketFragment_to_derivativeFragment"
+            app:destination="@id/derivativeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/portfolioFragment"
+        android:name="suvorov.coin.ui.portfolio.PortfolioFragment"
+        android:label="PortfolioFragment"
+        tools:layout="@layout/fragment_portfolio">
+        <action
+            android:id="@+id/action_portfolioFragment_to_currencyFragment"
+            app:destination="@id/currencyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="suvorov.coin.ui.search.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_currencyFragment"
+            app:destination="@id/currencyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="suvorov.coin.ui.settings.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settingsFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/currencyFragment"
+        android:name="suvorov.coin.ui.currency.CurrencyFragment"
+        android:label="CurrencyFragment"
+        tools:layout="@layout/fragment_currency">
+        <argument
+            android:name="id"
+            app:argType="string"/>
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="suvorov.coin.ui.category.CategoryFragment"
+        android:label="CategoryFragment"
+        tools:layout="@layout/fragment_category">
+        <argument
+            android:name="id"
+            app:argType="string"/>
+    </fragment>
+    <fragment
+        android:id="@+id/exchangeFragment"
+        android:name="suvorov.coin.ui.exchange.ExchangeFragment"
+        android:label="ExchangeFragment"
+        tools:layout="@layout/fragment_exchange">
+        <argument
+            android:name="id"
+            app:argType="string"/>
+    </fragment>
+    <fragment
+        android:id="@+id/derivativeFragment"
+        android:name="suvorov.coin.ui.derivative.DerivativeFragment"
+        android:label="DerivativeFragment"
+        tools:layout="@layout/fragment_derivative">
+        <argument
+            android:name="name"
+            app:argType="string"/>
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="suvorov.coin.ui.registration.RegistrationFragment"
+        android:label="RegistrationFragment"
+        tools:layout="@layout/fragment_registration">
+
+        <action
+            android:id="@+id/action_registrationFragment_to_checkRegistrationFragment"
+            app:destination="@id/successfulRegistrationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/successfulRegistrationFragment"
+        android:name="suvorov.coin.ui.registration.SuccessfulRegistrationFragment"
+        android:label="CheckRegistrationFragment"
+        tools:layout="@layout/fragment_successful_registration">
+        <action
+            android:id="@+id/action_checkRegistrationFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="suvorov.coin.ui.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_successfulLoginFragment"
+            app:destination="@id/successfulLoginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/successfulLoginFragment"
+        android:name="suvorov.coin.ui.login.SuccessfulLoginFragment"
+        android:label="SuccessfulLoginFragment"
+        tools:layout="@layout/fragment_successful_login">
+        <argument
+            android:name="email"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_successfulLoginFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+</navigation>
